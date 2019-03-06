@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Our Awesome Tool</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>Wiki Hole</title>
+
 </head>
 <body>
+
+	<div>
+		insert content here
+	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+	<script>
+		var config = {
+		  apiKey: "",
+		  authDomain: "myfirstproject-acb19.firebaseapp.com",
+		  databaseURL: "https://myfirstproject-acb19.firebaseio.com",
+		  projectId: "myfirstproject-acb19",
+		  storageBucket: "myfirstproject-acb19.appspot.com",
+		  messagingSenderId: "293913554361"
+		};
+		firebase.initializeApp(config);
+
+		var database = firebase.database();
+	</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="./orange.js"></script>
 
 </body>
 </html>
