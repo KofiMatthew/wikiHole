@@ -1,0 +1,9 @@
+These mock APIs are for returning test data so we don't have to:
+- eat into call limits
+- be online
+- wait for real data just to work on the UI
+- avoid exposing API keys on Github, at least until demo
+
+Each mock api will:
+	- accept and parse a url string
+	- return test data in json format
