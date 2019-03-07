@@ -1,9 +1,18 @@
 These mock APIs are for returning test data so we don't have to:
-- eat into call limits
-- be online
-- wait for real data just to work on the UI
-- avoid exposing API keys on Github, at least until demo
+	- eat into call limits
+	- be online
+	- wait for real data to be returned
+	- expose API keys on Github (at least until demo)
 
 Each mock api will:
 	- accept and parse a url string
 	- return test data in json format
+	- throw errors in the console if something is clearly wrong with the url
+
+To use the mock api:
+	1) Link to the javascript file
+	2) Comment out any code that makes a real API request
+	3) Replace that code with a function in this format: call[API name](url)
+		API names will be camel cased, non-hyphenated versions of the .js file names
+		example: callWikipedia(url)
+	4) Run the code and check for errors in the console
