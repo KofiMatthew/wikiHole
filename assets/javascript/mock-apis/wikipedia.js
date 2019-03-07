@@ -1,13 +1,15 @@
 function callWikipedia(url) {
 	const baseUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=';
 	
-	if (!url) console.error('need to give callWikipedia a URL');
-	else if (typeof url !== 'string') console.error('callWikipedia URL must be a string');
-	else if (url.slice(0, baseUrl.length) !== baseUrl) console.error('something is missing in the url');
-	else if (!url.slice(baseUrl.length)) console.error('need a search term');
-	else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(url)) console.error('invalid URL; some characters that don\'t belong');
-	else return JSON.stringify(wikipediaMockData);
-}
+	return new Promise((resolve, reject) => {
+		if (!url) reject('need to give callWikipedia a URL');
+		else if (typeof url !== 'string') reject('callWikipedia URL must be a string');
+		else if (url.slice(0, baseUrl.length) !== baseUrl) reject('something is missing in the url');
+		else if (!url.slice(baseUrl.length)) reject('need a search term');
+		else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(url)) reject('invalid URL; some characters that don\'t belong');
+		else setTimeout(() => resolve(JSON.stringify(wikipediaMockData)), 250);
+	});
+};
 
 const wikipediaMockData = [
 	"complex",

@@ -5,14 +5,24 @@ These mock APIs are for returning test data so we don't have to:
 	- expose API keys on Github (at least until demo)
 
 Each mock api will:
-	- accept and parse a url string
-	- return test data in json format
+	- accept a url string
+	- asynchronously return test data in json format
 	- throw errors in the console if something is clearly wrong with the url
 
 To use the mock api:
 	1) Link to the javascript file
-	2) Comment out any code that makes a real API request
-	3) Replace that code with a function in this format: call[API name](url)
-		API names will be camel cased, non-hyphenated versions of the .js file names
-		example: callWikipedia(url)
+	2) Comment out the AJAX code
+	3) Replace that code with the corresponding test function
+		 Use .then and .catch just the same as you would with AJAX
+		 API names will be camel cased, non-hyphenated versions of the .js file names
+		 
+		 Example:
+			
+			var searchTerm = 'camelCase';
+			var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=asdf' + searchTerm;
+
+			callWikipedia(url)
+				.then(response => { console.log(response) })
+				.catch(err => { console.error(err) });
+	
 	4) Run the code and check for errors in the console
