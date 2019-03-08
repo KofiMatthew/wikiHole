@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
   //double click function for grabbing search terms
   var p = $("p");
   p.css({ cursor: "pointer" });
-  p.dblclick(function(e) {
+  p.dblclick(function (e) {
     var range =
       window.getSelection() ||
       document.getSelection() ||
@@ -11,33 +11,51 @@ $(document).ready(function() {
     var word = $.trim(range.toString());
     if (word != "") {
       alert(word);
-        //call function allSearch 
+      //call function allSearch 
     }
     range.collapse();
     e.stopPropagation();
   });
 
-//allSearch function that calls each individual search function:
-function allSearch() {
+  //allSearch function that calls each individual search function:
+  function allSearch() {
     wikiSearch();
     soundCloud();
     listenNotes();
-}
+  }
 
-//wikipedia function
-function wikiSearch() {
+  //wikipedia function
+  function wikiSearch() {
 
-}
+  }
 
-//soundcloud function
-function soundCloud() {
+  //soundcloud function
+  function soundCloud() {
 
-}
+  }
 
-//listen notes function
-function listenNotes() {
+  //listen notes function
+  function listenNotes() {
 
-}
+  }
 
-/* allSearch(); */
+  /* allSearch(); */
 });
+
+
+//at front page hide content
+$('main').hide();
+
+//creat a function to hide front page and display content
+function crossTheEventHorizon() {
+  $('main').show();
+  $('.hero-image').hide();
+}
+
+
+$('#dive-in-btn').on(click, function () {
+  crossTheEventHorizon();
+  console.log('hi')
+})
+
+
