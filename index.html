@@ -7,15 +7,76 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	<link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 	<title>Wiki Hole</title>
 
 </head>
 <body>
 
-	<div>
-		insert content here
-	</div>
+	
+	<!-- top bar nav -->
+	<nav class="navbar transparent navbar-expand-lg navbar-dark bg-dark">
+			<div class="collapse navbar-collapse w-100 order-1 order-lg-0" id="navbarNav">
+					<ul class="navbar-nav">
+							<li class="nav-item">
+									<a class="nav-link" href="#">links if wanted!?</a>
+							</li>	
+					</ul>
+			</div>
+			<div class="d-flex w-100 order-0">
+					<div class="w-100">
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+									<span class="navbar-toggler-icon"></span>
+							</button>
+					</div>
+					<a class="navbar-brand text-center w-100" href="#">Wiki Hole</a>
+					<span class="w-100"></span>
+			</div>
+			<span class="w-100"></span>
+	</nav>
+<!-- end top nav bar -->
+
+<div class="jumbotron jumbotron-fluid">
+		<div class="container-fluid">
+			<div class="searchContainer col-sm-12">
+	<h4>begin your dive down the wiki hole -- cool image here that dissapers when wiki search term is searched and random results are brought up</h4>
+					<div class="input-group">
+						<input class="form-control my-0 py-1 " type="text" placeholder="Search" aria-label="Search">
+						<div class="input-group-append">
+							<span class="input-group-text" id="basic-text"><i class="fa fa-search text-grey"
+									aria-hidden="true"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+
+<main role="main" class="container-fluid">
+
+		<div class="row">
+			<div class="col-sm-9 wikiArea">
+				<h3>Wiki exerpt area--always visible</h3>
+					<p>wiki area of double click words</p>
+
+				
+					<div class="soundCloudPlayer">
+						<h3>sound cloud player area</h3>
+					</div>
+
+
+					<div class="podcastPlayer">
+							<h3>podcast player area</h3>
+					</div>
+		</div>
+
+			<div class="col-sm-3 historyArea">
+				<h3>Your Wiki Hole History </h3>
+				<ul>
+					<li>
+						<a class="holeHistory" href="#">links of history</a>
+					</li>
+				</ul>
+			</div>	
 
 	<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 	<script>
