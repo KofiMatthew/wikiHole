@@ -13,15 +13,16 @@ function allSearch(word) {
 function wikiSearch() {    
     var queryURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=' + searchTerm;   
     callWikipedia(queryURL).then(function(response) {
+    
+    //use this when switching to actual ajax and delete the line above
     /* $.ajax({
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-    }), */
-    response = console.log(JSON.parse(response));
-    
-    $("#wikiTitle").text(response[0]);
-    var wikiPara = $("<p>").append(response[2]);
+    */
+    const resultPara = console.log(JSON.parse(response));    
+    $("#wikiTitle").text(resultPara[0]);
+    var wikiPara = $("<p>").append(resultPara[2]);
     $("#wikiPara").append(wikiPara);
     });    
 };
