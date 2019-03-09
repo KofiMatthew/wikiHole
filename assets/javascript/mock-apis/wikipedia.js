@@ -2,14 +2,28 @@ function callWikipedia(url) {
 	const baseUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=';
 	
 	return new Promise((resolve, reject) => {
-		if (!url) reject('need to give callWikipedia a URL');
-		else if (typeof url !== 'string') reject('callWikipedia URL must be a string');
-		else if (url.slice(0, baseUrl.length) !== baseUrl) reject('something is missing in the url');
-		else if (!url.slice(baseUrl.length)) reject('need a search term');
-		else if (!/^(ftp|http|https):\/\/[^ "]+$/.test(url)) reject('invalid URL; some characters that don\'t belong');
-		else setTimeout(() => resolve(JSON.stringify(wikipediaMockData)), 250);
+		!url
+			? reject('need to give wikipedia a URL')
+			: typeof url !== 'string'
+			? reject('wikipedia URL must be a string')
+			: url.slice(0, baseUrl.length) !== baseUrl
+			? reject('something is missing in the wikipedia url')
+			: !url.slice(baseUrl.length)
+			? reject('need a wikipedia search term')
+			: !/^(ftp|http|https):\/\/[^ "]+$/.test(url)
+			? reject('invalid wikipedia URL; some characters that don\'t belong')
+			: setTimeout(() => resolve(JSON.stringify(wikipediaMockData)), 250);
 	});
 };
+
+/*
+// testing
+const hello = 'yay you did it'
+
+callWikipedia('https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=')
+  .then((result) => console.log(result))
+  .catch((err) => console.error(err));
+*/
 
 const wikipediaMockData = [
 	"complex",
