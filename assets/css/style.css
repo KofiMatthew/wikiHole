@@ -1,13 +1,52 @@
-.jumbotron{
-    background-image: url(../images/deep.gif);
+body {
+    background-color: rgb(21, 19, 19);
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.sticky-top {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+}
+
+.hero-image {
+    background-image: url("");
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#hero-row {
+    display: flex;
+    height: 800px;
+    align-content: center;
+}
+
+.hero-text {
+    color: rgb(252, 252, 252);
+    margin-left: .8rem;
+}
+
+p {
+    color: rgb(252, 252, 252);
+    font-size: 4rem;
+}
+
+h5 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.jumbotron {
+    background-image: url(../Images/gammaraytele.jpg);
     background-size: cover;
     height: auto;
     background-attachment: fixed;
     background-position: top;
 }
 
-.searchContainer{
-    background-color: rgba(255, 255, 255, 0.685);
-    height: 220px;
-    padding: 3%;
-}
