@@ -2,6 +2,8 @@ function callYoutube(url) {
   const baseUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10';
   const query = '&q=';
   const key = '&key=';
+  
+  console.log('YouTube called with search url:', url)
 
   return new Promise((resolve, reject) => {
     !url
