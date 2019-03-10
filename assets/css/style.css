@@ -1,52 +1,51 @@
 body {
-    background-color: rgb(21, 19, 19);
-}
-
-.navbar-brand {
-    padding: 0;
-}
-
-.sticky-top {
-    position: -webkit-sticky;
-    /* Safari */
-    position: sticky;
-}
-
-.hero-image {
-    background-image: url("");
-    height: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-#hero-row {
-    display: flex;
-    height: 800px;
-    align-content: center;
-}
-
-.hero-text {
-    color: rgb(252, 252, 252);
-    margin-left: .8rem;
+	background-color: rgb(21, 19, 19);
 }
 
 p {
-    color: rgb(252, 252, 252);
-    font-size: 4rem;
+	color: rgb(252, 252, 252);
 }
 
 h5 {
-    margin-top: 15px;
-    margin-bottom: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.navbar-brand {
+	padding: 0;
+}
+
+.sticky-top {
+	position: -webkit-sticky;
+	/* Safari */
+	position: sticky;
+}
+
+.hero-image {
+	background-image: url("");
+	height: 800px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+#hero-row {
+	display: flex;
+	height: 800px;
+	align-content: center;
+}
+
+.hero-text {
+	color: rgb(252, 252, 252);
+	margin-left: .8rem;
 }
 
 .jumbotron {
-    background-image: url(../Images/gammaraytele.jpg);
-    background-size: cover;
-    height: auto;
-    background-attachment: fixed;
-    background-position: top;
+	background-image: url(../Images/gammaraytele.jpg);
+	background-size: cover;
+	height: auto;
+	background-attachment: fixed;
+	background-position: top;
 }
 

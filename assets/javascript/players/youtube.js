@@ -10,5 +10,5 @@ function newYTVideo(videoId) {
       frameborder="0"
     ></iframe>`);
 
-  $('#you-tube-video').html(ytPlayer) 
+  $('#youtube-video').html(ytPlayer) 
 }

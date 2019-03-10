@@ -29,7 +29,7 @@
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
 					<div class="hero-text">
-						<p>wiki hole</p>
+						<h1>wiki hole</h1>
 						<h3>take a deep dive into a strange entanglement of words, Wikipedia, music and podcasts</h3>
 						<h5>where your imagination isn't your limitation</h5>
 						<button type="button" id="dive-in-btn" class="btn btn-light">dive in</button>
@@ -40,11 +40,11 @@
 			<div class="searchContainer col-sm-12">
 
 				<div class="input-group">
-					<input class="form-control my-0 py-1 " id="wikiSearch" type="text" placeholder="dive in"
-						aria-label="Search">
+					<input class="form-control my-0 py-1 " id="wikiSearch" type="text" placeholder="dive in" aria-label="Search">
 					<div class="input-group-append">
-						<span class="input-group-text" id="basic-text"><i class="fa fa-search text-grey"
-								aria-hidden="true"></i></span>
+						<span class="input-group-text" id="search-icon">
+							<i class="fa fa-search text-grey"aria-hidden="true"></i>
+						</span>
 					</div>
 				</div>
 			</div>
@@ -68,13 +68,13 @@
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item" id="you-tube-container">
-							<img src="..." class="d-block w-100" alt="...">
+							<img class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item" id="listen-notes-container">
-							<img src="..." class="d-block w-100" alt="...">
+							<img class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item" id="sound-cloud-container">
-							<img src="..." class="d-block w-100" alt="...">
+							<img class="d-block w-100" alt="...">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,6 +88,8 @@
 				</div>
 			</div>
 
+			<!-- this is the YT video player container -->
+			<div id="youtube-video"></div>
 
 			<div class="col-sm-3 historyArea">
 				<h3>Your Wiki Hole History </h3>
@@ -100,12 +102,16 @@
 		</div>
 	</main>
 
+	<!-- mock APIs for testing; remove in production -->
+	<script src="./assets/javascript/mock-apis/wikipedia.js"></script>
+	<script src="./assets/javascript/mock-apis/youtube.js"></script>
+	
+	<!-- media players -->
+	<script src="./assets/javascript/players/youtube.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="./assets/javascript/mock-apis/wikipedia.js"></script>
 	<script src="assets/javascript/orange.js"></script>
-
 
 </body>
 
