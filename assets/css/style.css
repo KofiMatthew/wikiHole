@@ -71,7 +71,6 @@ h5 {
 	line-height: 2.2em;
 }
 	
-
 #wikiTitle {
 	font-size: 1.2em;
 	text-transform: uppercase;
@@ -80,6 +79,29 @@ h5 {
 	
 }
 
+#wikiSearch {
+margin-left: 12px;
+}
+
+#search-button {
+border-radius: 0 3px 3px 0;
+}
+
+#listen-notes-container {
+	background-image: url(../Images/gammaraytele.png);
+	background-size: cover;
+	height: 30em;
+	background-attachment: fixed;
+	background-position: top;
+}
+
+#sound-cloud-container {
+	background-image: url(../Images/gammaraytele.png);
+	background-size: cover;
+	height: 30em;
+	background-attachment: fixed;
+	background-position: top;
+}
 .historyArea {
 	margin-left: 20px;
 }
