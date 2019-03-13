@@ -13,7 +13,6 @@ function youTubeSearch(searchTerm) {
 
 	    const ytPlayer = $(`
 				<iframe
-					align="middle"
 	        id="player"
 	        type="text/html"
 	        width="640"
