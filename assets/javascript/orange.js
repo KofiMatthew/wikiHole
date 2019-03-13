@@ -1,13 +1,14 @@
 const history = [];
 const hideMe = $(".hideMe");
 hideMe.hide();
+
 $(document).ready(function() {
 	// search button click handler
 	$("#search-icon").on("click", function(event) {
+		hideMe.show();
 		event.preventDefault();
 		const searchTerm = $("#wikiSearch").val().trim();
 		allSearch(searchTerm);
-		hideMe.show();
 	});
 });
 
