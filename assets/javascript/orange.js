@@ -1,4 +1,4 @@
-var counter = 0;
+const history = [];
 
 $(document).ready(function() {
 	// search button click handler
@@ -9,85 +9,44 @@ $(document).ready(function() {
 	});
 });
 
-// calls each search API
-function allSearch(searchTerm) {
-	wikiSearch(searchTerm);
-	
-	//make sure youTube is the last one called because it calls the history function
-	youTubeSearch(searchTerm);
+// calls each search API and builds a history object
+async function allSearch(searchTerm) {
+	const wikipedia = await wikiSearch(searchTerm);
+	const youtube = await youTubeSearch(searchTerm);
+	const historyObj = {
+		wikipedia,
+		youtube,
+		searchTerm,
+	};
+
+	appendHistory(historyObj);
 };
 
-function youTubeSearch(searchTerm) {
-	const key = '987654321abcde';
-	const queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q='+ searchTerm + '&key=' + key;
-	callYoutube(queryURL)
-	// replace youTubeSearch() with the AJAX method below
-	/* $.ajax({
-			url: queryURL,
-			method: "GET"
-		}).then(response => {})
-	*/		.then(response => {
-			response = JSON.parse(response);
-			const randChoice = response.items[Math.floor(Math.random()*response.items.length)];
-			const videoId = randChoice.id.videoId;
-			newYTVideo(videoId);
-			history(videoId, searchTerm);
-		})
-		.catch(err => console.error(err));
-};
+function appendHistory(historyObj) {
+	const newHist = $("<ul>").text(history.length + ': ' + historyObj.searchTerm);
 
-// Wikipedia search
-function wikiSearch(searchTerm) {    
-	const queryURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=' + searchTerm;
+	history.push(historyObj);
 
-	// replace callWikipedia() with the AJAX method below
-	/* $.ajax({
-			url: queryURL,
-			method: "GET"
-		}).then(response => {})
-	*/
-	callWikipedia(queryURL)
-		.then(response => {
-			response = JSON.parse(response);
-			
-			const wikiPara = $("<p id='wikiParagraph'>")
-				.append(response[2])
-				.css({ cursor: "pointer" })
-				.dblclick(e => {
-					const range =
-						window.getSelection() ||
-						document.getSelection() ||
-						document.selection.createRange();
-					
-					const searchTerm = $.trim(range.toString());
-					if (searchTerm) allSearch(searchTerm);
-					e.stopPropagation();
-				});
+	Object.keys(historyObj).forEach(key => {
+		const func = key + 'Call';
+		if (key !== 'searchTerm') {
+			const element = $("<li>")
+				.attr("id", historyObj[key])
+				.text(key)
+				.click(apiCalls[key]);
 
-			$("#wikiPara").html(wikiPara);
-			$("#wikiTitle").text(response[0]);
-		})
-		.catch(err => console.error(err));    
-};
+			newHist.append(element);
+		}
+	});
 
-function history(videoId, searchTerm) {
-	counter++;
-	const newHist = $("<ul>")
-		.text(counter);
-	const videoLink = $("<li>")
-		.addClass('histLink')
-		.attr("data", videoId)
-		.text(searchTerm);
-	newHist.append(videoLink);
 	$("#histList").append(newHist);
 };
 
-var displayHistItem = function() {
-	const videoId = $(this).attr("data");
-	newYTVideo(videoId);
-};
-
-$(document).on("click", ".histLink", displayHistItem);
-
-	
-
+// THIS DOESN"T WORK
+$('wikiSearch').keyup(() => {
+	if (this.key === 13) {
+		event.preventDefault();
+		const searchTerm = $("#wikiSearch").val().trim();
+		allSearch(searchTerm);
+	}
+})
