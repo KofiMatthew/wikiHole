@@ -12,14 +12,6 @@ body {
     position: sticky;
 }
 
-.hero-image {
-    background-image: url("");
-    height: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
 
 #hero-row {
     display: flex;
@@ -34,7 +26,7 @@ body {
 
 p {
     color: rgb(252, 252, 252);
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 h5 {
@@ -50,3 +42,8 @@ h5 {
     background-position: top;
 }
 
+#datetime {
+    background-color: yellow;
+    display: inline-block;
+    width: 400px;
+}
