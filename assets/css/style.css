@@ -46,6 +46,7 @@ h3 {
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 700;
 	letter-spacing: .05em;
+	color: rgb(252, 252, 252);
 }
 
 h5 {
@@ -64,10 +65,22 @@ h5 {
 	background-position: top;
 }
 
-#wikiPara {
-
+#wikiPara p {
+	font-family: 'Ubuntu', sans-serif; 
+	font-size: .9em;
+	line-height: 2.2em;
 }
+	
 
 #wikiTitle {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: .06em; 
+	text-align: center;
 	
 }
+
+.historyArea {
+	margin-left: 20px;
+}
+
