@@ -12,16 +12,17 @@ function youTubeSearch(searchTerm) {
 	    const url = 'http://www.youtube.com/embed/' + videoId;
 
 	    const ytPlayer = $(`
-	      <iframe
+				<iframe
+					align="middle"
 	        id="player"
 	        type="text/html"
 	        width="640"
-	        height="390"
+					height="390"
 	        src="${url}"
 	        frameborder="0"
 	      ></iframe>`);
 
-	    $('#youtube-video').html(ytPlayer);
+	    $('#you-tube-container').html(ytPlayer);
 
 			resolve(videoId);
 		})
