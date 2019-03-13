@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono|Ubuntu:400, 700" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./assets/css/style.css" type="text/css">
@@ -17,9 +18,9 @@
 
 	<!-- Just an image on nav bar for now I put a GIF but hopefully we can put one of Leanne's cool icons on there!!!-->
 
-	<nav class="navbar sticky-top navbar-dark" style="background-color: rgb(20, 19, 19);">
+	<nav class="navbar sticky-top navbar-dark" style="background-color:  rgb(32, 28, 28);">
 		<a class="navbar-brand" href="#">
-			<img src="assets/Images/wikibanner-01.png" width="400" height="60" alt="">
+			<img src="assets/Images/wikibanner-01.png"  alt="WikiHole Logo">	 
 		</a>
 	</nav>
 
@@ -29,15 +30,16 @@
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
 					<div class="hero-text">
-						<p>wiki hole</p>
+						<br>
 						<h3>take a deep dive into a strange entanglement of words, Wikipedia, music and podcasts</h3>
 						<h5>where your imagination isn't your limitation</h5>
-						<div class="input-group">
+						<div class=" searchContainer input-group">
 							<input class="form-control my-0 py-1 " id="wikiSearch" type="text" placeholder="dive in"
 								aria-label="Search">
 							<div class="input-group-append">
-								<span class="input-group-text" id="basic-text"><i class="fa fa-search text-grey"
-										aria-hidden="true"></i></span>
+								<span class="input-group-text" id="search-icon">
+									<i class="fa fa-search text-grey" aria-hidden="true"></i>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -65,13 +67,13 @@
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item" id="you-tube-container">
-							<img src="..." class="d-block w-100" alt="...">
+							<img class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item" id="listen-notes-container">
-							<img src="..." class="d-block w-100" alt="...">
+							<img class="d-block w-100" alt="...">
 						</div>
 						<div class="carousel-item" id="sound-cloud-container">
-							<img src="..." class="d-block w-100" alt="...">
+							<img class="d-block w-100" alt="...">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -85,6 +87,8 @@
 				</div>
 			</div>
 
+			<!-- this is the YT video player container -->
+			<div id="youtube-video"></div>
 
 			<div class="col-sm-3 historyArea">
 				<h3>Your Wiki Hole History </h3>
@@ -97,12 +101,16 @@
 		</div>
 	</main>
 
+	<!-- mock APIs for testing; remove in production -->
+	<script src="./assets/javascript/mock-apis/wikipedia.js"></script>
+	<script src="./assets/javascript/mock-apis/youtube.js"></script>
+
+	<!-- media players -->
+	<script src="./assets/javascript/players/youtube.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="./assets/javascript/mock-apis/wikipedia.js"></script>
 	<script src="assets/javascript/orange.js"></script>
-
 
 </body>
 

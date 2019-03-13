@@ -1,6 +1,8 @@
 function callWikipedia(url) {
 	const baseUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&format=json&uselang=user&errorformat=plaintext&search=';
-	
+
+	console.log('Wikipedia called with search url:', url);
+
 	return new Promise((resolve, reject) => {
 		!url
 			? reject('need to give wikipedia a URL')
