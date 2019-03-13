@@ -87,21 +87,6 @@ margin-left: 12px;
 border-radius: 0 3px 3px 0;
 }
 
-#listen-notes-container {
-	background-image: url(../Images/gammaraytele.png);
-	background-size: cover;
-	height: 30em;
-	background-attachment: fixed;
-	background-position: top;
-}
-
-#sound-cloud-container {
-	background-image: url(../Images/gammaraytele.png);
-	background-size: cover;
-	height: 30em;
-	background-attachment: fixed;
-	background-position: top;
-}
 .historyArea {
 	margin-left: 20px;
 }
