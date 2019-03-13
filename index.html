@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Mono|Ubuntu:400, 700" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="./assets/css/style.css" type="text/css">
@@ -17,9 +18,9 @@
 
 	<!-- Just an image on nav bar for now I put a GIF but hopefully we can put one of Leanne's cool icons on there!!!-->
 
-	<nav class="navbar sticky-top navbar-dark" style="background-color: rgb(20, 19, 19);">
+	<nav class="navbar sticky-top navbar-dark" style="background-color:  rgb(32, 28, 28);">
 		<a class="navbar-brand" href="#">
-			<img src="assets/Images/wikibanner-01.png" width="400" height="60" alt="">
+			<img src="assets/Images/wikibanner-01.png" alt="WikiHole Logo">
 		</a>
 	</nav>
 
@@ -29,33 +30,40 @@
 				<div class="col-md-1"></div>
 				<div class="col-md-4">
 					<div class="hero-text">
-						<h1>wiki hole</h1>
+						<br>
 						<h3>take a deep dive into a strange entanglement of words, Wikipedia, music and podcasts</h3>
 						<h5>where your imagination isn't your limitation</h5>
-						<button type="button" id="dive-in-btn" class="btn btn-light">dive in</button>
 					</div>
+					<div class="col-md-7"></div>
+					<form>
+					<div class="searchContainer">
+						<div class="input-group">
+							<input class="form-control my-0 py-1 " id="wikiSearch" type="input" placeholder="dive in"
+								aria-label="Search">
+							<button id="search-button" type="submit">
+								<div class="input-group-append">
+									<span class="input-group-text" id="search-icon">
+										<i class="fa fa-search text-grey" aria-hidden="true"></i>
+									</span>
+								</div>
+							</button>
+						</div>
+					</div>
+					</form>
 				</div>
-				<div class="col-md-7"></div>
 			</div>
-			<div class="searchContainer col-sm-12">
 
-				<div class="input-group">
-					<input class="form-control my-0 py-1 " id="wikiSearch" type="text" placeholder="dive in" aria-label="Search">
-					<div class="input-group-append">
-						<span class="input-group-text" id="search-icon">
-							<i class="fa fa-search text-grey"aria-hidden="true"></i>
-						</span>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
+	</div>
+
 
 
 	<main role="main" class="container-fluid">
 
 		<div class="row">
-			<div class="col-sm-9 wikiArea">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-11 wikiArea">
 				<div class="wiki-container">
 					<h5 id="wikiTitle">Title</h5>
 					<div id="wikiPara"></div>
@@ -101,12 +109,12 @@
 	<!-- mock APIs for testing; remove in production -->
 	<script src="./assets/javascript/mock-apis/wikipedia.js"></script>
 	<script src="./assets/javascript/mock-apis/youtube.js"></script>
-	
+
 	<!-- media players -->
 	<script src="./assets/javascript/players/youtube.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="assets/javascript/orange.js"></script>
 
 </body>

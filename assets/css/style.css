@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(21, 19, 19);
+	background-color: rgb(32, 28, 28);
 }
 
 p {
@@ -11,8 +11,11 @@ h5 {
 	margin-bottom: 15px;
 }
 
-.navbar-brand {
+.navbar-brand img {
+	height: auto;
+	width: 60%;
 	padding: 0;
+	margin: 0;
 }
 
 .sticky-top {
@@ -21,18 +24,10 @@ h5 {
 	position: sticky;
 }
 
-.hero-image {
-	background-image: url("");
-	height: 800px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
-}
-
 #hero-row {
 	display: flex;
-	height: 800px;
+	height: 100%;
+	weight: auto;
 	align-content: center;
 }
 
@@ -41,11 +36,51 @@ h5 {
 	margin-left: .8rem;
 }
 
+p {
+	font-family: 'Ubuntu', sans-serif;
+	color: rgb(252, 252, 252);
+	font-size: 2rem;
+}
+
+h3 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+	letter-spacing: .05em;
+	color: rgb(252, 252, 252);
+}
+
+h5 {
+	font-family: 'PT Mono', monospace;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: rgb(252, 252, 252);
+}
+
 .jumbotron {
-	background-image: url(../Images/gammaraytele.jpg);
+	background-image: url(../Images/gammaraytele-01.png);
 	background-size: cover;
 	height: auto;
 	background-attachment: fixed;
 	background-position: top;
+}
+
+#wikiPara p {
+	font-family: 'Ubuntu', sans-serif; 
+	font-size: .9em;
+	line-height: 2.2em;
+}
+	
+
+#wikiTitle {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: .06em; 
+	text-align: center;
+	
+}
+
+.historyArea {
+	margin-left: 20px;
 }
 
