@@ -71,13 +71,20 @@ h5 {
 	line-height: 2.2em;
 }
 	
-
 #wikiTitle {
 	font-size: 1.2em;
 	text-transform: uppercase;
 	letter-spacing: .06em; 
 	text-align: center;
 	
+}
+
+#wikiSearch {
+margin-left: 12px;
+}
+
+#search-button {
+border-radius: 0 3px 3px 0;
 }
 
 .historyArea {
