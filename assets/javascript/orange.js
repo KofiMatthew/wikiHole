@@ -21,9 +21,12 @@ $(document).ready(function() {
 async function allSearch(searchTerm) {
 	const wikipedia = await wikiSearch(searchTerm);
 	const youtube = await youTubeSearch(searchTerm);
+	const apiNews = await apiNewsSearch(searchTerm);
+	
 	const historyObj = {
 		wikipedia,
 		youtube,
+		apiNews,
 		searchTerm,
 	};
 
