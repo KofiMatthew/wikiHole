@@ -1,4 +1,9 @@
 const history = [];
+const apiCalls = {
+  youtube: e => getYouTubeVideo(e.target.id),
+  wikipedia: e => wikiSearch(e.target.id),
+};
+
 const hideMe = $(".hideMe");
 hideMe.hide();
 
@@ -46,11 +51,16 @@ function appendHistory(historyObj) {
 	$("#histList").append(newHist);
 };
 
-// THIS DOESN"T WORK
-$('wikiSearch').keyup(() => {
+/* THIS DOESN"T WORK
+$('#wikiSearch').keyup(function() {
+	const value = this.value;
+	console.log(value[value.length - 1])
 	if (this.key === 13) {
-		event.preventDefault();
+		console.log('sdkhdskjdhfd')
+		event
 		const searchTerm = $("#wikiSearch").val().trim();
-		allSearch(searchTerm);
+		//alert(searchTerm)
+		//allSearch(searchTerm);
 	}
 })
+*/
