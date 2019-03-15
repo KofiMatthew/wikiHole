@@ -1,5 +1,5 @@
 function youTubeSearch(searchTerm) {
-	const key = 'AIzaSyCp9MUlOjyRwuxHzMldZsYjp-F13iwGATs';
+	const key = prompt('gimme key');
 
 	const queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q='+ searchTerm + '&key=' + key;
 	return new Promise((resolve, reject) => {
@@ -27,6 +27,7 @@ function youTubeSearch(searchTerm) {
 		})
 		.catch(err => console.error(err));
 	});
+
 };
 
 function getYouTubeVideo(videoId) {
@@ -44,3 +45,4 @@ function getYouTubeVideo(videoId) {
 
   $('#you-tube-container').html(ytPlayer)
 }
+

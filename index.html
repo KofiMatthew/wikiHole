@@ -22,6 +22,14 @@
 		<a class="navbar-brand" href="#">
 			<img src="assets/Images/wikibanner-01.png" alt="WikiHole Logo">
 		</a>
+		<div class="btn-group">
+			<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Your WikiHole
+			</button>
+			<div class="dropdown-menu dropdown-menu-right">
+				<a id="histList" class="dropdown-item" type="button"></a>
+			</div>
+		</div>
 	</nav>
 
 	<div class="jumbotron jumbotron-fluid">
@@ -32,7 +40,10 @@
 					<div class="hero-text">
 						<br>
 						<h3>take a deep dive into a strange entanglement of words, Wikipedia, music and podcasts</h3>
-						<h5>where your imagination isn't your limitation</h5>
+						<h5>dive in with a search then double click on any Wiki word to start your trip down the
+							WikiHole</h5>
+
+
 					</div>
 					<div class="col-md-7"></div>
 					<div class="searchContainer">
@@ -57,12 +68,13 @@
 
 	<main role="main" class="container-fluid hideMe">
 		<div class="row">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-11 wikiArea">
+			<div class="col-sm-6 wikiArea">
 				<div class="wiki-container">
 					<h5 id="wikiTitle"></h5>
 					<div id="wikiPara"></div>
 				</div>
+			</div>
+			<div class="col-sm-6 wikiArea">
 				<div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
 					<ol class="carousel-indicators">
 						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -71,16 +83,19 @@
 					</ol>
 					<div class="carousel-inner">
 						<div class="carousel-item active" id="you-tube-container">
-							<img class="d-block w-100" src="assets/Images/jumbotron.jpeg" style="height: 390px;" alt="Oops... something went wrong.">
+							<img class="d-block w-100" src="assets/Images/jumbotron.jpeg" style="height: 390px;"
+								alt="Oops... something went wrong.">
 						</div>
 						<div class="carousel-item" id="listen-notes-container">
-							<img class="d-block w-100" src="assets/Images/jumbotron.jpeg" style="height: 390px;" alt="Coming Soon...">
+							<img class="d-block w-100" src="assets/Images/jumbotron.jpeg" style="height: 390px;"
+								alt="Coming Soon...">
 						</div>
 						<div class="carousel-item" id="sound-cloud-container">
-							<img class="d-block w-100" src="assets/Images/jumbotron.jpeg" style="height: 390px;" alt="Coming Soon...">
+							<img class="d-block w-100" src="assets/Images/jumbotron.jpeg" style="height: 390px;"
+								alt="Coming Soon...">
 						</div>
 					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">	
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
 					</a>
@@ -90,18 +105,10 @@
 					</a>
 				</div>
 			</div>
-
-			<!-- this is the YT video player container -->
-			<div id="youtube-video"></div>
-
-			<div class="col-sm-3 historyArea">
-				<h3>Your Wiki Hole History </h3>
-				<div id="histList"></div>
-			</div>
 		</div>
 	</main>
 
-	<!-- Search Code -->
+
 	<script src="./assets/javascript/search/youtube.js"></script>
 	<script src="./assets/javascript/search/wikipedia.js"></script>
 

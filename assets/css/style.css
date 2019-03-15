@@ -1,3 +1,10 @@
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+
 body {
 	background-color: rgb(32, 28, 28);
 }
@@ -27,7 +34,7 @@ h5 {
 #hero-row {
 	display: flex;
 	height: 100%;
-	weight: auto;
+	width: auto;
 	align-content: center;
 }
 
@@ -51,6 +58,8 @@ h3 {
 
 h5 {
 	font-family: 'PT Mono', monospace;
+	font-size: 1em;
+	letter-spacing: .05em; 
 	font-weight: bold;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -60,7 +69,7 @@ h5 {
 .jumbotron {
 	background-image: url(../Images/gammaraytele-01.png);
 	background-size: cover;
-	height: auto;
+	height: 35em;
 	background-attachment: fixed;
 	background-position: top;
 }
@@ -92,5 +101,10 @@ border-radius: 0 3px 3px 0;
 }
 
 iframe{
-	margin-left: 33%;
+	width: 100%;
+	margin-left: auto;
+}
+
+#youtube-video{
+	width: 100%;
 }
