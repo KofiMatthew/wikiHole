@@ -6,6 +6,8 @@ console.log(url)
       <iframe
         id="player"
         type="text/html"
+        width="640"
+				height="390"
         src="${url}"
         frameborder="0"
       ></iframe>`);
