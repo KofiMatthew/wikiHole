@@ -1,7 +1,6 @@
 const apiCalls = {
   youtube: e => {
 
-console.log(url)
     const ytPlayer = $(`
       <iframe
         id="player"
@@ -12,7 +11,7 @@ console.log(url)
         frameborder="0"
       ></iframe>`);
 
-    $('#youtube-video').html(ytPlayer)
+    $('#you-tube-container').html(ytPlayer)
   },
   wikipedia: e => wikiSearch(e.target.id),
 };
