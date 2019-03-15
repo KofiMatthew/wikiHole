@@ -1,4 +1,5 @@
 function apiNewsSearch(searchTerm) {
+	/* const key = 'enter key here' */
 	const key = prompt('gimme apiNews key');
 	console.log(searchTerm);
     const queryURL = 'https://newsapi.org/v2/everything?' + 'q=' + searchTerm + '&sortBy=relevancy&' + 'apiKey=' + key;
@@ -45,7 +46,7 @@ function apiNewsSearch(searchTerm) {
 				});
 			$('#apiNews-container').html(Article);
 		
-		resolve(newsUrl);
+		resolve(searchTerm);
 	})
 	.catch(err => console.error(err));
 	});   
