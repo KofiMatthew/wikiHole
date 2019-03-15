@@ -41,6 +41,7 @@ function appendHistory(historyObj) {
 			newHist.append(element);
 		}
 	});
+	console.log(newHist);
 
 	$("#histList").append(newHist);
 };
