@@ -1,30 +1,49 @@
-function listenNotesSearch() {
-	/* const key = prompt('give me ur youtube key');
-
-	const queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q='+ searchTerm + '&key=' + key;
+function listenNotesSearch(searchTerm) {
+	const url = 'https://listennotes.p.rapidapi.com/api/v1/search?sort_by_date=0&type=episode&offset=0&len_min=1&len_max=10&language=English&safe_mode=1&q=' + searchTerm;
+	const key = prompt('gimme listennoteskey')
 	return new Promise((resolve, reject) => {
-		$.ajax({
-			url: queryURL,
-			method: "GET"
-		}).then(response => {
-			const randChoice = response.items[Math.floor(Math.random()*response.items.length)];
-			const videoId = randChoice.id.videoId;
-			const url = 'http://www.youtube.com/embed/' + videoId;
+		fetch(url, {
+	    method: "GET",
+	    headers: {
+	      "X-RapidAPI-Key":key
+	    }
+	  })
+	  	.then(res => res.json())
+	    .then(jsonData => {
+	    	const results = jsonData.results;
+	    	const randomInt = Math.floor(Math.random() * results.length);
+	    	const podcast = results[randomInt];
+	    	console.log(podcast)
 
-			const ytPlayer = $(`
-				<iframe
-					id="player"
-					type="text/html"
-					width="640"
-					height="390"
-					src="${url}"
-					frameborder="0"
-				></iframe>`);
+	    	addListenNotesPlayer(podcast);
+	    	resolve(podcast.id);
+	    })
+	    .catch(err => console.error(err));
+	  });
+}
 
-			$('#you-tube-container').html(ytPlayer);
+function addListenNotesPlayer(podcast) {
+	const mp3Url = podcast.audio;
+	const description = podcast.description_highlighted;
+	const explicit = podcast.explicit;
 
-			resolve(videoId);
-		})
-		.catch(err => console.error(err));
-	}); */
-	};
+	const player = `
+	<div class="row">
+		<div class="col-3-lg">
+			<img src="${podcast.image}" width="100%" />
+		</div>
+		<div class="col-9-lg text-center">
+			<audio controls>
+			  <source src="${mp3Url}" type="audio/mpeg">
+			  Your browser does not support the audio tag.
+			</audio>
+		</div>
+	</div>
+	<strong>${podcast.title_highlighted}</strong>
+	<br />${podcast.description_highlighted}
+	`;
+
+	//if explicit append explicit notice
+
+	$('#listen-notes-container').html(player);
+}
