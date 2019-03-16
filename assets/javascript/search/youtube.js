@@ -17,7 +17,7 @@ function youTubeSearch(searchTerm) {
 };
 
 function getYouTubeVideo(videoId) {
-	const url = 'http://www.youtube.com/embed/' + videoId;
+	const url = 'https://www.youtube.com/embed/' + videoId;
 
   const ytPlayer = $(`
     <iframe
