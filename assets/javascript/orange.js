@@ -21,11 +21,14 @@ $(document).ready(function() {
 async function allSearch(searchTerm) {
 	const wikipedia = await wikiSearch(searchTerm);
 	const youtube = await youTubeSearch(searchTerm);
-	const listenNotes = await listenNotesSearch(searchTerm);
+  const listenNotes = await listenNotesSearch(searchTerm);
+	const apiNews = await apiNewsSearch(searchTerm);
+	
 	const historyObj = {
 		wikipedia,
 		youtube,
 		listenNotes,
+    apiNews,
 		searchTerm,
 	};
 
@@ -48,7 +51,6 @@ function appendHistory(historyObj) {
 			newHist.append(element);
 		}
 	});
-	console.log(newHist);
 
 	$("#histList").append(newHist);
 };

@@ -79,8 +79,26 @@ h5 {
 	font-size: .9em;
 	line-height: 2.2em;
 }
+
+#newsPara p {
+	font-family: 'Ubuntu', sans-serif; 
+	font-size: .9em;
+	line-height: 2.2em;
+}
+
+#goToNews{
+	text-align: center;
+}
 	
-#wikiTitle {
+#wikiTitle{
+	font-size: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: .06em; 
+	text-align: center;
+	
+}
+
+#newsTitle{
 	font-size: 1.2em;
 	text-transform: uppercase;
 	letter-spacing: .06em; 

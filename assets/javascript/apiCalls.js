@@ -12,4 +12,9 @@ const apiCalls = {
     $('#you-tube-container').html(ytPlayer)
   },
   wikipedia: e => wikiSearch(e.target.id),
+  apiNews: e => {
+    alert("I've been clicked!");
+    apiNewsSearch(e.target.id);
+  },
+  
 };
