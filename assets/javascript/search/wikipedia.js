@@ -4,9 +4,8 @@ function wikiSearch(searchTerm) {
 	return new Promise((resolve, reject) => {
 		$.getJSON(queryURL).then(response => {
 			const title = response[0];
-			const wikiPara = $("<p id='wikiParagraph'>")
+			const wikiPara = $('<p id="wikiParagraph" style="cursor:pointer;" >')
 				.append(response[2])
-				.css({ cursor: "pointer" })
 				.dblclick(e => {
 					const range =
 						window.getSelection() ||

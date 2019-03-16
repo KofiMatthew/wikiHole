@@ -15,37 +15,34 @@ function listenNotesSearch(searchTerm) {
 	    	const podcast = results[randomInt];
 
 	    	addListenNotesPlayer(podcast);
-	    	resolve(podcast.id);
+
+	    	// AFAIK, can't look up by ID
+	    	// So resolve with title to use as search term when clicking history
+	    	resolve(podcast.title_original);
 	    })
-	    .catch(err => console.error(err));
+	    .catch(err => {console.error(err)});
 	  });
 }
 
 function addListenNotesPlayer(podcast) {
-	const mp3Url = podcast.audio;
-	const description = podcast.description_highlighted;
-	const explicit = podcast.explicit;
-
 	const player = `
-	<div class="row">
-		<div class="col-3-lg">
-			<img src="${podcast.image}" width="100%" />
+		<div class="row">
+			<div class="col-3">
+				<img src="${podcast.image}" style="width:100%;" />
+			</div>
+			<div class="col-9" style="color:white;">
+				<strong>${podcast.title_original}</strong>
+				<br />${podcast.description_highlighted}
+			</div>
 		</div>
-		<div class="col-9-lg text-center">
-			<audio controls>
-			  <source src="${mp3Url}" type="audio/mpeg">
-			  Your browser does not support the audio tag.
-			</audio>
-		</div>
-	</div>
-	<strong>${podcast.title_highlighted}</strong>
-	<br />${podcast.description_highlighted}
-	<br />
-	<img src="./assets/Images/listennoteslogo.png" />
-	<br /><br /><br />
+		<audio controls style="width:100%;">
+		  <source src="${podcast.audio}" type="audio/mpeg">
+		  Your browser does not support the audio tag.
+		</audio>
+		<br />
+		<img src="./assets/Images/listennoteslogo.png" />
+		<br /><br /><br />
 	`;
-
-	//if explicit append explicit notice
 
 	$('#listen-notes-container').html(player);
 }
