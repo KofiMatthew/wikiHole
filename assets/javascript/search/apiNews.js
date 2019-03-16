@@ -1,7 +1,5 @@
 function apiNewsSearch(searchTerm) {
-	console.log(searchTerm);
     const queryURL = 'https://newsapi.org/v2/everything?' + 'q=' + searchTerm + '&sortBy=relevancy&' + 'apiKey=' + keys.apiNews;
-		console.log(queryURL);
 
 	//function to call apiNews and process response
 	return new Promise ((resolve, reject) =>{
@@ -44,7 +42,7 @@ function apiNewsSearch(searchTerm) {
 				});
 			$('#apiNews-container').html(Article);
 		
-		resolve(searchTerm);
+		resolve(randChoice.title);
 	})
 	.catch(err => console.error(err));
 	});   

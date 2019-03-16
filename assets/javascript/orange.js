@@ -3,20 +3,18 @@ const apiCalls = {
   youtube: e => getYouTubeVideo(e.target.id),
   wikipedia: e => wikiSearch(e.target.id),
   listenNotes: e => listenNotesSearch(e.target.id),
-  apiNews:e => alert(`Hello I'm at the top of orange.js. I can call the function of your choice with the argument ${e.target.id}.`)
+  apiNews:e => apiNewsSearch(e.target.id),
 };
 
 const keys = {
-	youtube: '',
-	listenNotes: '',
-	apiNews: '',
+	youtube: prompt('youtube key, plz'),
+	listenNotes: prompt('listenNotes key, plz'),
+	apiNews: prompt('apiNews key, plz'),
 };
 
-const hideMe = $(".hideMe");
-hideMe.hide();
-
 $(document).ready(function() {
-	// search button click handler
+	const hideMe = $(".hideMe").hide();
+
 	$("#search-icon").on("click", function(event) {
 		hideMe.show();
 		event.preventDefault();
@@ -25,14 +23,15 @@ $(document).ready(function() {
 	});
 });
 
-// calls each search API and builds a history object
+// Calls each search API and builds a history object containing
+// 	 whatever each API needs to get back to that specific content
 async function allSearch(searchTerm) {
 	const wikipedia = await wikiSearch(searchTerm);
 	const youtube = await youTubeSearch(searchTerm);
   const listenNotes = await listenNotesSearch(searchTerm);
 	const apiNews = await apiNewsSearch(searchTerm);
 	
-	const historyObj = {
+	const historyItem = {
 		wikipedia,
 		youtube,
 		listenNotes,
@@ -40,19 +39,24 @@ async function allSearch(searchTerm) {
 		searchTerm,
 	};
 
-	appendHistory(historyObj);
+	appendHistory(historyItem);
 };
 
-function appendHistory(historyObj) {
-	const newHist = $("<ul>").text(history.length + ': ' + historyObj.searchTerm);
+// Displays the contents of the history item
+// Also adds to the history array, in case we have time for Firebase
+function appendHistory(historyItem) {
+	const newHist = $("<ul>").text(history.length + ': ' + historyItem.searchTerm);
 
-	history.push(historyObj);
+	history.push(historyItem);
 
-	Object.keys(historyObj).forEach(key => {
+	// Getting one specific piece of content can vary depending on the API
+	// So we select the proper function for doing so from the apiCalls object  
+	Object.keys(historyItem).forEach(key => {
 		const func = key + 'Call';
+
 		if (key !== 'searchTerm') {
 			const element = $("<li>")
-				.attr("id", historyObj[key])
+				.attr("id", historyItem[key])
 				.text(key)
 				.click(apiCalls[key]);
 
@@ -62,17 +66,3 @@ function appendHistory(historyObj) {
 
 	$("#histList").append(newHist);
 };
-
-/* THIS DOESN"T WORK
-$('#wikiSearch').keyup(function() {
-	const value = this.value;
-	console.log(value[value.length - 1])
-	if (this.key === 13) {
-		console.log('sdkhdskjdhfd')
-		event
-		const searchTerm = $("#wikiSearch").val().trim();
-		//alert(searchTerm)
-		//allSearch(searchTerm);
-	}
-})
-*/
