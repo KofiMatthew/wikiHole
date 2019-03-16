@@ -1,8 +1,6 @@
 function youTubeSearch(searchTerm) {
-	const key = prompt('gimme youtube key');
-	/* const key = 'enter key here'; */
-
-	const queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q='+ searchTerm + '&key=' + key;
+	const queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q='+ searchTerm + '&key=' + keys.youtube;
+	
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			url: queryURL,

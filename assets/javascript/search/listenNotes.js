@@ -1,11 +1,11 @@
 function listenNotesSearch(searchTerm) {
 	const url = 'https://listennotes.p.rapidapi.com/api/v1/search?sort_by_date=0&type=episode&offset=0&len_min=1&len_max=10&language=English&safe_mode=1&q=' + searchTerm;
-	const key = prompt('gimme listennoteskey')
+
 	return new Promise((resolve, reject) => {
 		fetch(url, {
 	    method: "GET",
 	    headers: {
-	      "X-RapidAPI-Key":key
+	      "X-RapidAPI-Key":keys.listenNotes
 	    }
 	  })
 	  	.then(res => res.json())
@@ -13,7 +13,6 @@ function listenNotesSearch(searchTerm) {
 	    	const results = jsonData.results;
 	    	const randomInt = Math.floor(Math.random() * results.length);
 	    	const podcast = results[randomInt];
-	    	console.log(podcast)
 
 	    	addListenNotesPlayer(podcast);
 	    	resolve(podcast.id);
@@ -41,6 +40,9 @@ function addListenNotesPlayer(podcast) {
 	</div>
 	<strong>${podcast.title_highlighted}</strong>
 	<br />${podcast.description_highlighted}
+	<br />
+	<img src="./assets/Images/listennoteslogo.png" />
+	<br /><br /><br />
 	`;
 
 	//if explicit append explicit notice

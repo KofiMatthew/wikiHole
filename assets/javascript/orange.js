@@ -2,6 +2,14 @@ const history = [];
 const apiCalls = {
   youtube: e => getYouTubeVideo(e.target.id),
   wikipedia: e => wikiSearch(e.target.id),
+  listenNotes: e => listenNotesSearch(e.target.id),
+  apiNews:e => alert(`Hello I'm at the top of orange.js. I can call the function of your choice with the argument ${e.target.id}.`)
+};
+
+const keys = {
+	youtube: '',
+	listenNotes: '',
+	apiNews: '',
 };
 
 const hideMe = $(".hideMe");

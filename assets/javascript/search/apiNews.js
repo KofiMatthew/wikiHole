@@ -1,8 +1,6 @@
 function apiNewsSearch(searchTerm) {
-	/* const key = 'enter key here' */
-	const key = prompt('gimme apiNews key');
 	console.log(searchTerm);
-    const queryURL = 'https://newsapi.org/v2/everything?' + 'q=' + searchTerm + '&sortBy=relevancy&' + 'apiKey=' + key;
+    const queryURL = 'https://newsapi.org/v2/everything?' + 'q=' + searchTerm + '&sortBy=relevancy&' + 'apiKey=' + keys.apiNews;
 		console.log(queryURL);
 
 	//function to call apiNews and process response
