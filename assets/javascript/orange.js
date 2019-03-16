@@ -16,10 +16,13 @@ $(document).ready(function() {
 	const hideMe = $(".hideMe").hide();
 
 	$("#search-icon").on("click", function(event) {
-		hideMe.show();
 		event.preventDefault();
 		const searchTerm = $("#wikiSearch").val().trim();
-		allSearch(searchTerm);
+		
+		if (/^[A-Z0-9 _]*$/ig.test(searchTerm)) {
+			hideMe.show();
+			allSearch(searchTerm);
+		}
 	});
 });
 
